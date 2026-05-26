@@ -12,7 +12,7 @@ RUN npm run build
 # Development container
 FROM base AS dev
 EXPOSE 4200
-CMD ["npm", "start"]
+CMD ["npm", "start", "--", "--host", "0.0.0.0"]
 
 
 FROM nginx:1.31.1-alpine AS prod
