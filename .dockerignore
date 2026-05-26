@@ -1,0 +1,15 @@
+# Avoid documentation in container
+*.md
+
+# Avoid files usefull for development
+k8s/
+docker-compose.yml
+Dockerfile
+.gitignore
+.tool-versions
+audit.json
+values.tpl.yaml
+.vscode/
+
+# This folder maybe usefull to improve build time
+.angular/
