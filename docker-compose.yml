@@ -1,0 +1,34 @@
+services:
+  # ----------------------------------------
+  # Angular 19 Frontend Service
+  # ----------------------------------------
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev # Run the 'ng serve' dev server
+    container_name: angular_frontend
+    command: npm start -- --host 0.0.0.0
+    ports:
+      # Host 4242 maps to Nginx container port 80
+      - "4242:80"
+      # Host 4200 maps to 'ng serve' container port 4200
+      - "4200:4200"
+    networks:
+      - my_network
+    # depends_on:
+    #   - backend # Depends on backend for API calls
+    develop:
+      # This section is used by 'docker compose watch'
+      watch:
+        - action: sync
+          path: .
+          target: /app
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: package.json
+
+networks:
+  my_network:
+    driver: bridge
