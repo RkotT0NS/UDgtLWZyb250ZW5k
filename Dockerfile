@@ -18,4 +18,4 @@ CMD ["npm", "start", "--", "--host", "0.0.0.0"]
 FROM nginx:1.31.1-alpine AS prod
 WORKDIR /app
 COPY --from=build /app/dist/olympic-games-starter/browser/ .
-COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
+COPY nginx/nginx.conf /etc/nginx/nginx.conf
