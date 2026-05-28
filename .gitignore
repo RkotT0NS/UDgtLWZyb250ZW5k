@@ -40,3 +40,9 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# antigravity-cli preferences
+.antigravitycli/
+
+test-results/*
+!test-results/.git-keep
