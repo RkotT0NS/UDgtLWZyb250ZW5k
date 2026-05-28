@@ -7,13 +7,27 @@ COPY . .
 
 # Application building container
 FROM base AS build
+WORKDIR /app
+
 RUN npm run build
 
 # Development container
 FROM base AS dev
+WORKDIR /app
 EXPOSE 4200
+
 CMD ["npm", "start", "--", "--host", "0.0.0.0"]
 
+# === Test Stage ===
+# For headless testing
+# Runs 'mvn test' against the compiled code
+FROM base AS test
+WORKDIR /app
+
+RUN apk add --no-cache chromium
+ENV CHROME_BIN=/usr/bin/chromium-browser
+
+CMD ["npm", "test"]
 
 FROM nginx:1.31.1-alpine AS prod
 WORKDIR /app

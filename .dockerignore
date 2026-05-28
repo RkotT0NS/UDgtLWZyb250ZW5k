@@ -13,3 +13,6 @@ values.tpl.yaml
 
 # This folder maybe usefull to improve build time
 .angular/
+
+# antigravity-cli preferences
+.antigravitycli/
