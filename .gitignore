@@ -44,5 +44,6 @@ Thumbs.db
 # antigravity-cli preferences
 .antigravitycli/
 
+# test results
 test-results/*
 !test-results/.git-keep
