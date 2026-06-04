@@ -76,7 +76,7 @@
         "vite"
       ],
       "effects": [],
-      "range": "<=19.2.22 || 20.0.0-next.0 - 20.3.22 || 21.0.0-next.0 - 21.2.6 || 22.0.0-next.0 - 22.0.0-next.5",
+      "range": "<=19.2.22 || 20.0.0-next.0 - 20.3.22 || 21.0.0-next.0 - 21.2.6 || 22.0.0-next.0 - 22.0.0-rc.3",
       "nodes": [
         "node_modules/@angular/build"
       ],
@@ -1474,6 +1474,35 @@
       ],
       "fixAvailable": true
     },
+    "tmp": {
+      "name": "tmp",
+      "severity": "high",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1119610,
+          "name": "tmp",
+          "dependency": "tmp",
+          "title": "tmp has Path Traversal via unsanitized prefix/postfix that enables directory escape",
+          "url": "https://github.com/advisories/GHSA-ph9p-34f9-6g65",
+          "severity": "high",
+          "cwe": [
+            "CWE-22"
+          ],
+          "cvss": {
+            "score": 0,
+            "vectorString": null
+          },
+          "range": "<0.2.6"
+        }
+      ],
+      "effects": [],
+      "range": "<0.2.6",
+      "nodes": [
+        "node_modules/tmp"
+      ],
+      "fixAvailable": true
+    },
     "vite": {
       "name": "vite",
       "severity": "high",
@@ -1578,9 +1607,9 @@
       "info": 0,
       "low": 0,
       "moderate": 14,
-      "high": 26,
+      "high": 27,
       "critical": 0,
-      "total": 40
+      "total": 41
     },
     "dependencies": {
       "prod": 12,
